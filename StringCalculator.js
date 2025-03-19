@@ -35,6 +35,20 @@ function add(string) {
         numArray = string.split(/[\n,]+/);
     }
 
+    // Check for negative numbers
+    let negativeNumbers = [];
+
+    for (let i = 0; i < numArray.length; i++) {
+        const num = parseInt(numArray[i], 10);
+        if (num < 0) {
+            negativeNumbers.push(num);
+        }
+    }
+
+    if (negativeNumbers.length > 0) {
+        throw new Error('negative numbers not allowed ' + negativeNumbers.join(','));
+    }
+
     // Calculate sum
     // Initialize the sum to 0
     let sum = 0;

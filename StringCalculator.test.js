@@ -32,4 +32,8 @@ describe('StringCalculator', () => {
     test('should return the sum of two numbers that supports custom multi-character delimiter', () => {
         expect(add('//[***]\n1***2***3')).toBe(6);
     });
+
+    test('throws an error when negative numbers are present', () => {
+        expect(() => add('1,-2,3,-4')).toThrow('negative numbers not allowed');
+    });
 });
