@@ -9,8 +9,8 @@ function add(string) {
         return parseInt(string, 10);  // Return the number itself
     }
 
-    // Step 1: Split the string by commas
-    const numArray = string.split(',');
+    // Split the string by both commas and newlines
+    const numArray = string.split(/[\n,]+/);
 
     // Step 2: Initialize a sum variable to 0
     let sum = 0;
