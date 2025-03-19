@@ -6,8 +6,15 @@ function add(string) {
 
     let numArray = [];
 
+    // Check for custom delimiter with square brackets format
+    if (string.startsWith('//[') && string.indexOf(']\n') > 0) {
+        const closingBracket = string.indexOf(']\n');
+        const customDelimiter = string.substring(3, closingBracket); // Extract from after '//[' to before ']\n'
+        const numbers = string.substring(closingBracket + 2); // Skip the ']\n' part
+        numArray = numbers.split(customDelimiter);
+    }
     // Check if the string starts with a custom delimiter (Eg: "//;\n1;2")
-    if (string.startsWith('//')) {
+    else if (string.startsWith('//')) {
         // Find the first newline character after the delimiter declaration
         const firstNewLine = string.indexOf('\n');
         // Extract the custom delimiter from the substring before the newline
