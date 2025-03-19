@@ -1,0 +1,21 @@
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# dotenv environment variables file
+.env
+
+# IDEs and editors
+.idea/
+.vscode/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Test Coverage
+coverage/
+
+# Log files
+*.log
